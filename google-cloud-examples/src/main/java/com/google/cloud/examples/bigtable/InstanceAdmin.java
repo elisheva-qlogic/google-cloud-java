@@ -90,16 +90,16 @@ public class InstanceAdmin {
     }
 
     Instance instance = null;
-    // Create instance if does not exists
+    // Create an instance if does not exists
     if (!found) {
       System.out.println("Instance does not exist, creating a PRODUCTION instance:");
       // [START bigtable_create_prod_instance]
-      // Creates a Production Instance with the ID "ssd-instance"
-      // with cluster id "ssd-cluster", 3 nodes and location us-central1-f
+      // Create a Production Instance with the ID "ssd-instance"
+      // cluster id "ssd-cluster", 3 nodes and location us-central1-f
       CreateInstanceRequest createInstanceRequest = CreateInstanceRequest.of(instanceID)
           .addCluster(clusterID, "us-central1-f", 3, StorageType.SSD).setType(Type.PRODUCTION)
           .addLabel("example", "instance_admin");
-      // Create production instance with given request
+      // Create a production instance with given request
       try {
         instance = adminClient.createInstance(createInstanceRequest);
         System.out.printf("PRODUCTION type instance: %s, created successfully", instance.getId());

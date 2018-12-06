@@ -45,7 +45,7 @@ public class HelloWorld {
     }
 
     // [START connecting_to_bigtable]
-    // create the settings to configure a bigtable data client
+    // Create the settings to configure a bigtable data client
     BigtableDataSettings settings = BigtableDataSettings.newBuilder()
         .setInstanceName(InstanceName.of(GCLOUD_PROJECT_ID, INSTANCE_ID)).build();
 

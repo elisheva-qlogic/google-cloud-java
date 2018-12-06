@@ -98,7 +98,7 @@ public class TableAdmin {
     // Check if table exists
     Table table = null;
     if (!adminClient.exists(TABLE_ID)) {
-      // Create table if does not exist
+      // Create a table if does not exist
       System.out.println("Table does not exist. Creating table: " + TABLE_ID);
       // Creating table
       try {
