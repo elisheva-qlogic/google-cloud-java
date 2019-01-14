@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC.  All Rights Reserved.
+ * Copyright 2019 Google LLC.  All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,19 @@ import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import java.io.IOException;
 
+/**
+ * An example of using Google Cloud Bigtable
+ *
+ * <p>This example is a very simple "hello world" application, that illustrates how to create a new
+ * table, write to the table, read the data back, and delete the table
+ *
+ * <ul>
+ *   <li>create table
+ *   <li>read single row
+ *   <li>read table
+ *   <li>delete table
+ * </ul>
+ */
 public class HelloWorld {
 
   private static final String COLUMN_FAMILY = "cf1";
@@ -85,6 +98,7 @@ public class HelloWorld {
     adminClient.close();
   }
 
+  /** Demonstrates how to create a table */
   public void createTable() {
     // [START creating_a_table]
     // Check if table exists, create table if does not exist
@@ -98,6 +112,7 @@ public class HelloWorld {
     // [END creating_a_table]
   }
 
+  /** Demonstrates how to write some rows to a table */
   public void writeToTable() {
     // [START writing_rows]
     try {
@@ -116,6 +131,7 @@ public class HelloWorld {
     // [END writing_rows]
   }
 
+  /** Demonstrates how to read a single row from a table */
   public void readSingleRow() {
     // [START reading_a_row]
     try {
@@ -133,6 +149,7 @@ public class HelloWorld {
     // [END reading_a_row]
   }
 
+  /** Demonstrates how to read an entire table */
   public void readTable() {
     // [START scanning_all_rows]
     try {
@@ -153,6 +170,7 @@ public class HelloWorld {
     // [END scanning_all_rows]
   }
 
+  /** Demonstrates how to delete a table */
   public void deleteTable() {
     // [START deleting_a_table]
     System.out.println("\nDeleting table: " + tableId);
